@@ -1,0 +1,32 @@
+@charset "UTF-8";
+/* CSS Document */
+*{
+	-webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+
+html{
+	height:100%;
+	width:100%;
+	background-color:#fff;
+	background-position:center 0px;
+	background-repeat: repeat;
+}
+
+body{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:12pt;
+	margin:0px;
+	background-attachment: scroll;
+	background-image: url('');
+	background-repeat: repeat-y;
+	width:100%;
+	height:100%;
+}
+
+#fingerCanvas{
+	float: left;
+	cursor: crosshair;
+	background-color: #000;
+	margin: 0;
+	padding: 0;
+}
