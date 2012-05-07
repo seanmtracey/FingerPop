@@ -93,8 +93,8 @@ function animate(){
 
 	for(i=0;i<particleArray.length;i++){
 
-        if(outOfBounds(particleArray[i].x, particleArray[i].y, particleArray[i].radius)) {
-            particleArray.splice(i, 1);
+        if(outOfBounds(particleArray[i].x, particleArray[i].y, particleArray[i].radius) && makeParticles) {
+            particleArray.splice(i, 1, (new Particle(touchX, touchY, randomRadius, randomRed, randomGreen, randomBlue, 1, randomVX, randomVY)));
         } else {
             var tmpBall = particleArray[i];
 
