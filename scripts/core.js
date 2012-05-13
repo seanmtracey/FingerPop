@@ -6,24 +6,35 @@ var canvasHeight = window.innerHeight;
 
 var touchX;
 var touchY;
+var touches;
 
 var makeParticles = false;
 var howMany = 200;
-
-var cache = window.applicationCache;
-
-console.log(cache);
 
 canvas.addEventListener('touchstart', function(e){
 	touchX = e.pageX;
 	touchY = e.pageY;
 	makeParticles = true;
+	touches = e.changedTouches;
 }, false);
 
 canvas.addEventListener('touchmove', function(e){
 	touchX = e.pageX;
 	touchY = e.pageY;
 }, false);
+
+/*canvas.addEventListener('touchmove', function(event) {
+  for (var i = 0; i < event.touches.length; i++) {
+    var touch = event.touches[i];
+    
+    touchX = touch.pageX;
+    touchY = touch.pageY;
+    ctx.beginPath();
+ 	ctx.arc(touch.pageX, touch.pageY, 20, 0, 2*Math.PI, true);
+    ctx.fill();
+    ctx.stroke();
+  }
+}, false);*/
 
 canvas.addEventListener('touchend', function(){
 	makeParticles = false;
@@ -75,7 +86,7 @@ var Particle = function (x, y, radius, r, g, b, a, vx, vy){
 animate();
 
 function animate(){
-
+	
 	var randomRadius = Math.floor(Math.random()*30);
 
 	var randomRed = Math.floor(Math.random()*255);
